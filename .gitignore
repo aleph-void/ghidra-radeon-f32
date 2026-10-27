@@ -2,3 +2,4 @@
 /build
 /dist
 *.sla
+__pycache__/
