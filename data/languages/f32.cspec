@@ -3,18 +3,19 @@
   <global>
     <range space="IM"/>
     <range space="DM"/>
+    <range space="RM"/>
+    <range space="SM"/>
+    <range space="XM"/>
   </global>
 
   <!-- This is just a dummy stack pointer to make the decompiler work. -->
   <stackpointer register="sp" space="DM"/>
 
-  <!-- FIXME: Replace fake calling convention with real one -->
+  <!-- There is no calling convention: the microcode is hand-written with global register allocation (callers and
+       callees were compared in real images).  r1 (reads pop the command queue) is not an argument or result. -->
   <default_proto>
     <prototype extrapop="0" stackshift="0" strategy="register" name="__stdcall">
       <input>
-        <pentry minsize="1" maxsize="8" extension="inttype">
-          <register name="r1"/>
-        </pentry>
         <pentry minsize="1" maxsize="8" extension="inttype">
           <register name="r2"/>
         </pentry>
@@ -42,7 +43,7 @@
       </input>
       <output>
         <pentry minsize="1" maxsize="8" extension="inttype">
-          <register name="r1"/>
+          <register name="r2"/>
         </pentry>
       </output>
     </prototype>

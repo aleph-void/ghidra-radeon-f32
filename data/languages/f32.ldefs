@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language_definitions>
   <language processor="AMD Radeon F32"
-            endian="little"
+            endian="big"
             instructionEndian="big"
             size="64"
             variant="default"
